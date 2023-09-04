@@ -17,3 +17,6 @@
 
 `php artisan db:seed --class=LotSeeder`
 
+### Demo:
+ **[https://auction.fit.az](https://auction.fit.az)**
+
