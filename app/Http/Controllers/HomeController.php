@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\Lot;
 use Carbon\Carbon;
 use App\Models\Lot;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {

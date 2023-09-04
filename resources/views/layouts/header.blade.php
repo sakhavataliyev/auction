@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/assets/img/apple-icon.png') }}">
   <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.png') }}">
-  <title>@yield('title', 'Carraa Admin Panel')</title>
+  <title>@yield('title', 'Auction store')</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700" rel="stylesheet" />
@@ -17,10 +17,23 @@
   <link href="{{ asset('/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="{{ asset('/assets/css/corporate-ui-dashboard.css?v=1.1.0') }}" rel="stylesheet" />
-  <link id="pagestyle" href="{{ asset('/assets/css/style.css?v=1.0.0') }}" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <style>
+    .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #d3d6da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 12px;
+      }
+
+      .page-item .page-link,
+      .page-item span {
+        color: #aeb0b3;
+      }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">

@@ -25,13 +25,7 @@
 <script src="{{ asset('/assets/js/plugins/chartjs.min.js') }}"></script>
 <script src="{{ asset('/assets/js/plugins/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('/assets/ckeditor/ckeditor.js') }}"></script>
-<script>
-  ClassicEditor
-      .create( document.querySelector( '#editor' ) )
-      .catch( error => {
-          console.error( error );
-      } );
-</script>
+
 
 <script>
   $(document).ready(function() {

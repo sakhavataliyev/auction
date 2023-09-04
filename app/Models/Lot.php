@@ -23,7 +23,6 @@ class Lot extends Model
 
     public function scopeLotCount($query)
     {
-        // return $query->whereDate('created_at', \Carbon\Carbon::today());
         return $query->select('lots.created_at')->count();
     }
 

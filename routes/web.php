@@ -16,23 +16,9 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.index');
-// });
-
-// Route::view('/', 'layouts.index')
-//         ->name('home');
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::resource('lots', LotController::class);
 Route::resource('categories', CategoryController::class);
 
-// Filter
-
 Route::post('/lots/filter/', [LotController::class, 'filter'])->name('lots.filter');
-// Route::controller(LotController::class)->group(function(){
-//         Route::post('/lots/filter/', 'filter')
-//             ->name('lots.filter');
-//     });
-    
