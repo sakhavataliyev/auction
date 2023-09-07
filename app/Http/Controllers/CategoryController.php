@@ -40,8 +40,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show($category)
     {
+        $category = Category::with('lots')->findOrFail($category);
+
         return view('categories.show', compact('category'));
     }
 

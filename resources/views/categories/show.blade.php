@@ -9,9 +9,9 @@
           <div class="card-header pb-0 p-3">
             <div class="row">
               <div class="col-md-8 col-9">
-                <h6 class="mb-0 font-weight-semibold text-lg">
+                <h5 class="mb-0 font-weight-semibold text-lg">
                   {{ $category->name }}
-                </h6>
+                </h5>
               </div>
               <div class="col-md-4 col-3 text-end">
                 <a href="{{ route('categories.edit', $category) }}">
@@ -25,10 +25,17 @@
             </div>
           </div>
           <div class="card-body p-3">
-            <p class="text-sm mb-4">
-              {{-- {{ $category->description }}   --}}
-            </p>
-          </div>
+
+            <h6 class="mb-0 font-weight-semibold text-lg">Lots Using This Category</h6>
+            <ul class="list-group mt-2">
+              <li class="list-group-item p-2 mb-0">
+                @forelse ($category->lots as $row)
+                  <span class="badge bg-primary text-xs text-primary mb-1">{{ $row->title }}</span>
+                @empty
+                  <span class="badge bg-white text-xs text-secondary mb-1">Empty..</span>
+                @endforelse
+              </li>
+            </ul>
         </div>
       </div>
     </div>
