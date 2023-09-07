@@ -18,7 +18,9 @@
                 <div class="col-12">
                   <div class="w-100">
                     <p class="text-sm text-dark mb-1">Daily Lots</p>
+                    <a href="{{ route('statistics.day') }}">
                     <h4 class="mb-2 text-success font-weight-bold">{{ $dailycount }} @if($dailycount > 1)lots @else lot @endif</h4>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -40,7 +42,9 @@
                 <div class="col-12">
                   <div class="w-100">
                     <p class="text-sm text-dark mb-1">Weekly Lots</p>
+                    <a href="{{ route('statistics.week') }}">
                     <h4 class="mb-2 text-success font-weight-bold">{{ $weeklycount }} @if($weeklycount > 1)lots @else lot @endif</h4>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -62,7 +66,9 @@
                 <div class="col-12">
                   <div class="w-100">
                     <p class="text-sm text-dark mb-1">Monthly Lots</p>
+                    <a href="{{ route('statistics.month') }}">
                     <h4 class="mb-2 text-success font-weight-bold">{{ $monthlycount }} @if($monthlycount > 1)lots @else lot @endif</h4>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -84,7 +90,9 @@
                 <div class="col-12">
                   <div class="w-100">
                     <p class="text-sm text-dark mb-1">Yearly Lots</p>
+                    <a href="{{ route('statistics.year') }}">
                     <h4 class="mb-2 text-success font-weight-bold">{{ $yearlycount }} @if($yearlycount > 1)lots @else lot @endif</h4>
+                    </a>
                   </div>
                 </div>
               </div>
