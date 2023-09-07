@@ -79,6 +79,7 @@ class LotController extends Controller
 
         $lot->title = $request->input('title');
         $lot->description = $request->input('description');
+        $lot->updated_at = now();
         $lot->save();
     
         // get category id and update if necessary
