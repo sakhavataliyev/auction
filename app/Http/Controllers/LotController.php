@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lot;
-use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Lot\StoreRequest;
 use App\Http\Requests\Lot\FilterRequest;
 use App\Http\Requests\Lot\UpdateRequest;
@@ -15,7 +14,9 @@ class LotController extends Controller
      */
     public function index()
     {
-        $lots = Lot::latest()->paginate(20);
+        $lots = Lot::with("categories")
+                    ->latest()
+                    ->paginate(20);
 
         return view('lots.index', compact('lots'));
     }
@@ -54,19 +55,9 @@ class LotController extends Controller
      */
     public function show($lot)
     {
-        $lots = Lot::findOrFail($lot);
+        $lot = Lot::with('categories')->findOrFail($lot);
 
-        $categories = DB::table('lot_categories')
-            ->where('lot_categories.lot_id', $lot)
-            ->join('categories', 
-                   'lot_categories.category_id', 
-                   'categories.id')
-            ->select('lot_categories.*',
-                     'categories.*')
-            ->get();
-
-
-        return view('lots.show', compact('lots', 'categories'));
+        return view('lots.show', compact('lot'));
     }
 
     /**
@@ -132,6 +123,7 @@ class LotController extends Controller
         if (!empty($startDate && $endDate)) {
             $query->whereBetween('created_at', [$startDate, $endDate]);
         }
+        
 
         $lots = $query->paginate(50);
 

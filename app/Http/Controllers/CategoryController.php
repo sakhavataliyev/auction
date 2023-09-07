@@ -31,13 +31,8 @@ class CategoryController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $validated = $request->validated();
         
-        Category::create([
-            'name' => $request->name,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        Category::create($request->validated());
 
         return redirect()->route('categories.index')->with('success', 'Category Added Successfully!');
     }
@@ -63,12 +58,7 @@ class CategoryController extends Controller
      */
     public function update(UpdateRequest $request, Category $category)
     {
-        $validated = $request->validated();
-
-        $category->update([
-            'name' => $request->name,
-            'updated_at' => now()
-        ]);
+        $category->update($request->validated());
 
         return redirect()->route('categories.index')->with('success', 'Category Updated Successfully!');
     }

@@ -88,6 +88,7 @@
                     </tr>
                   </thead>
                   <tbody>
+                        
                     @foreach ($lots as $key=>$row)
                         <tr>
                           <td>
@@ -96,7 +97,7 @@
                             </div>
                           </td>
 
-                          <td style="min-width:80px; max-width:100px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                          <td style="min-width:80px; max-width:150px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
                             <div class="d-flex px-2 py-1">
                               <div class="my-auto">
                                 <h6 class="mb-0 text-sm">{{ $row->title }}</h6>
@@ -104,8 +105,14 @@
                             </div>
                           </td>
 
-                          <td class="py-4" style="min-width:80px; max-width:160px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
-                            <p class="text-sm text-secondary mb-0">{{ $row->description }}</p>
+                          <td class="py-4" style="max-width: 250px;">
+                          <div class="d-flex flex-wrap">
+                            @forelse ($row->categories as $rows)
+                              <span class="badge bg-primary text-xs text-primary mb-1">{{ $rows->name }}</span>
+                            @empty
+                              <span class="badge bg-secondary text-xs text-secondary mb-1">Empty..</span>
+                            @endforelse
+                          </div>
                           </td>
 
                           <td class="align-middle text-center">
